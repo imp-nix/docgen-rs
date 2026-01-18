@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    imp.url = "github:imp-nix/imp.lib";
+    imp.url = "github:imp-nix/imp-nix";
     imp.inputs.nixpkgs.follows = "nixpkgs";
   };
 
