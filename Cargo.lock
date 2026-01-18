@@ -177,7 +177,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "nixdoc"
+name = "docgen"
 version = "3.0.4"
 dependencies = [
  "clap",

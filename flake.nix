@@ -31,13 +31,10 @@
           cargo = lib.importTOML ./Cargo.toml;
         in
         rustPlatform.buildRustPackage {
-          pname = "docgen";
+          pname = cargo.package.name;
           version = cargo.package.version;
           src = ./.;
           cargoLock.lockFile = ./Cargo.lock;
-          postInstall = ''
-            mv $out/bin/nixdoc $out/bin/docgen
-          '';
         };
     in
     {
