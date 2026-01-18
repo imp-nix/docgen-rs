@@ -3,15 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    imp.url = "github:imp-nix/imp-nix";
-    imp.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
     {
       self,
       nixpkgs,
-      imp,
     }:
     let
       lib = nixpkgs.lib;
@@ -60,15 +57,6 @@
               ${pkgs.clippy}/bin/cargo-clippy --no-deps -- -D warnings
             '';
           });
-        }
-      );
-
-      formatter = forAllSystems (
-        system:
-        imp.formatterLib.make {
-          pkgs = nixpkgs.legacyPackages.${system};
-          treefmt-nix = imp.inputs.treefmt-nix;
-          rust = true;
         }
       );
 
