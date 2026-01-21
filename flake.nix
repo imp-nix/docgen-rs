@@ -40,6 +40,9 @@
       # Nix library for documentation generation
       lib = import ./nix;
 
+      # Flake-parts modules
+      flakeModules.docs = ./nix/flakeModules/docs.nix;
+
       packages = forAllSystems (
         system:
         let
