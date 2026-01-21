@@ -32,6 +32,7 @@
           version = cargo.package.version;
           src = ./.;
           cargoLock.lockFile = ./Cargo.lock;
+          doCheck = true;
           meta.mainProgram = "docgen";
         };
     in

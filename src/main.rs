@@ -354,7 +354,7 @@ fn collect_entries(
                     .map(|di| (di.name.to_string(), di.into_entry(prefix, category, locs)))
                     .collect();
 
-                if let Some(ref exports) = export {
+                if let Some(exports) = export {
                     return exports
                         .iter()
                         .filter_map(|name| scope.get(name).cloned())
