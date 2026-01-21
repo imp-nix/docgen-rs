@@ -1,5 +1,5 @@
 {
-  description = "Documentation generator CLI for Nix projects";
+  description = "Documentation generator for Nix projects";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -37,6 +37,9 @@
         };
     in
     {
+      # Nix library for documentation generation
+      lib = import ./nix;
+
       packages = forAllSystems (
         system:
         let
